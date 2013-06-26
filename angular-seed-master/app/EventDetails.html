@@ -27,9 +27,31 @@
 				<div class="span4">
 					<strong>Address:</strong>
 					{{event.location.address}}<br/>
-					{{event.location.city}}, {{event.location.province}}
+					{{event.location.city}}, {{event.location.country}}
 				</div>
 			</div>
+			<hr />
+			<h2>Sessions</h2>
+			<ul class="thumbnails">
+				<li ng-repeat="session in event.sessions">
+					<div class="row">
+						<div class="span0 well votingwidget">
+							<div class="votingbutton" ng-click="upvoteSession(session)">
+								<i class="icon-chevron-up icon-grey"></i>
+							</div>
+							<div class="badge badge-inverse">
+								{{session.upvoteCount}}
+							</div>
+							<div class="votingbutton" ng-click="downvoteSession(session)">
+								<i class="icon-chevron-down icon-grey"></i>
+							</div>
+						</div>
+						<div class="span9 well">
+							<h4 class="well-title">{{session.name}}</h4>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 

@@ -6,7 +6,20 @@ eventsApp.controller('EventController',
 			name: 'Angular Boot Camp',
 			date: '1/1/2013',
 			time: '10:30 am',
-			location: {address: 'JustGiving', city:'London', province:'UK'}
+			location: {address: 'JustGiving', city:'London', country:'UK'},
+			sessions: [
+						{ name: 'Controllers', upvoteCount: 0 }, 
+						{ name: 'Directives and scope', upvoteCount: 0 }, 
+						{ name: 'Filters', upvoteCount: 0 }
+					  ]
 		}
-	}
+
+		$scope.upvoteSession = function(session) {
+			session.upvoteCount++;
+		}
+
+		$scope.downvoteSession = function(session) {
+			session.upvoteCount--;
+		}
+ 	}
 );
