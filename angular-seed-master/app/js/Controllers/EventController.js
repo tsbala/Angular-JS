@@ -14,6 +14,12 @@ eventsApp.controller('EventController',
 					  ]
 		}
 
+		$scope.myStyle = { color : 'orange'};
+
+		$scope.snippet = '<span style="color: red">hi there</span>';
+
+		$scope.showBool = true;
+
 		$scope.upvoteSession = function(session) {
 			session.upvoteCount++;
 		}
